@@ -11,3 +11,6 @@ class Apply(models.Model):
     body = models.TextField(null=True)
     file = models.FileField(null=True)
     isFinal = models.BooleanField(null=True)
+
+    def __str__(self):
+        return self.name

@@ -1,9 +1,19 @@
+<script>
+    function submit(index){
+        if (index==1){
+            document.form.action="save.html"
+        }
+        if (index==2){
+            document.form.action="submit.html"
+        }
+    }
+</script>
 <form method='POST'>
     {% csrf_token %}
     <table>
         {{form.as_table}}
     </table>
     <br>
-    <input type="submit" value="임시저장">
-    <input type="submit" value="제출">
+    <input type="button" value="임시저장" onclick="submit(1)">
+    <input type="button" value="제출" onclick="submit(2)">
 </form>
