@@ -8,6 +8,6 @@ class Apply(models.Model):
     student_id = models.IntegerField(null=False, default='')
     email = models.EmailField(null=False, default='')
     phone = models.IntegerField(null=False, default='')
-    body = models.TextField(null=False, default='안씀')
+    body = models.TextField(null=False, default='')
     file = models.FileField(upload_to='upload',null=False, default='')
     isFinal = models.BooleanField(default=False)

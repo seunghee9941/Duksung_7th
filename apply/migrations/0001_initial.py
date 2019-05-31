@@ -20,9 +20,9 @@ class Migration(migrations.Migration):
                 ('student_id', models.IntegerField(default='')),
                 ('email', models.EmailField(default='', max_length=254)),
                 ('phone', models.IntegerField(default='')),
-                ('body', models.TextField(default='안씀')),
+                ('body', models.TextField(default='')),
                 ('file', models.FileField(default='', upload_to='upload')),
-                ('isFinal', models.BooleanField(default=True)),
+                ('isFinal', models.BooleanField(default=False)),
             ],
         ),
     ]

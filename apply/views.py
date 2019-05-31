@@ -14,35 +14,21 @@ def addetail(request,apply_id):
 def form(request):
         # action = request.POST.get('submit')
         form = ApplyForm(request.POST, request.FILES)
-        print("a")
-        print(form)
-        
         if request.POST.get('_save')=="임시저장": # 지원서 임시저장
-                print("b")
                 if request.method == "POST":
-                        print("c")
                         if form.is_valid():
                                 board = form.save(commit = True)
-                                print(board)
-                                print(board.name)
                                 board.isFinal=False
-                                print(board.isFinal)
                                 board.save()
                                 return HttpResponseRedirect('save')
                 else:
                         form = ApplyForm()
                         return render(request, 'form.html', {'form':form})
-        print("d")
         if request.POST.get('_submit')=="제출": # 지원서 제출
-                print("e")
                 if request.method == "POST":
-                        print("f")
                         if form.is_valid():
                                 board = form.save(commit = True)
                                 board.isFinal=True
-                                print(board)
-                                print(board.name)
-                                print(board.isFinal)
                                 board.save()
                                 return HttpResponseRedirect('submit')
                 else:
