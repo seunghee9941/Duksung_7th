@@ -1,0 +1,13 @@
+{% for apply in applys.all %}
+
+    <p> <지원서 확인 페이지> </p> 
+    <div>
+        <p>application</p>
+    
+        <a href="{% url apply.file apply_id %} "> <지원서보기> </a>
+
+        <p> 이름 : {{ apply.name }} </p>
+
+        <P> 학번 : {{ apply.student_id }} </P> 
+    </div>
+{%endfor%}
