@@ -1,13 +1,14 @@
-{% for apply in applys.all %}
+
 
     <p> <지원서 확인 페이지> </p> 
     <div>
         <p>application</p>
-    
-        <a href="{% url apply.file apply_id %} "> <지원서보기> </a>
 
-        <p> 이름 : {{ apply.name }} </p>
+        <p> 이름 : {{ applys.name }} </p>
 
-        <P> 학번 : {{ apply.student_id }} </P> 
+        <P> 학번 : {{ applys.student_id }} </P> 
+
+
+        <a class="ba"  id="id_uploaded_file" href="{{ applys.file.url }}" download>다운로드하기</a>
+
     </div>
-{%endfor%}
