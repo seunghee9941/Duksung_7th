@@ -1,13 +1,70 @@
-{% for apply in applys.all %}
 
-    <p> <지원서 확인 페이지> </p> 
-    <div>
-        <p>application</p>
-    
-        <a href="{% url apply.file apply_id %} "> <지원서보기> </a>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
 
-        <p> 이름 : {{ apply.name }} </p>
 
-        <P> 학번 : {{ apply.student_id }} </P> 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title> 지원서 확인 </title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+
+      
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand"> Hello, Nice to meet You! </h3>
+      <nav class="nav nav-masthead justify-content-center">
+      </nav>
     </div>
-{%endfor%}
+  </header>
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading"> My name is {{ applys.name }}  </h1>
+    <p class="lead"> Student Number :  {{ applys.student_id }} </p>
+    <p class="lead">
+    
+      <a class="ba"  id="id_uploaded_file" href="{{ applys.file.url }}" download> <지원서 다운로드> </a>
+    </p>
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p> "Since there is nothing so well worth having as friends, never lose a chance to make them." </p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
