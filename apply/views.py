@@ -1,13 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Apply
 from .forms import ApplyForm
-<<<<<<< HEAD
 from .models import Apply
-from django.http import HttpResponse, HttpResponseRedirect
-=======
 import os
 from django.http import HttpResponseRedirect,Http404,HttpResponse
->>>>>>> 6dc6e672a9acb650239bfbd789478ba55320563a
 # Create your views here.
 
 def addetail(request,apply_id):
